@@ -6,6 +6,8 @@ namespace WellDonegeon
 {
     public class PlayerHandsController : MonoBehaviour
     {
+        [SerializeField] private Transform handsTransform;
+        
         private Ingredient _ingredient;
 
         public Ingredient Ingredient => _ingredient;
@@ -18,12 +20,15 @@ namespace WellDonegeon
             {
                 _ingredient = ingredient;
                 Debug.Log("Ingredient picked");
+                ingredient.SpawnAt(handsTransform);
             }
         }
 
         public void IngredientTakenAway()
         {
             _ingredient = null;
+            // Assume we have only 1 child
+            Destroy(handsTransform.GetChild(0).gameObject);
             Debug.Log("Ingredient taken away");
         }
         

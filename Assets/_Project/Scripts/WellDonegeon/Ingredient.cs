@@ -6,5 +6,10 @@ namespace WellDonegeon
     public class Ingredient : ScriptableObject
     {
         [SerializeField] private GameObject ingredientModel;
+
+        public void SpawnAt(Transform parent)
+        {
+            Instantiate(ingredientModel, parent);
+        }
     }
 }
