@@ -7,6 +7,8 @@ namespace WellDonegeon
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovementController : MonoBehaviour
     {
+        private static readonly int Velocity = Animator.StringToHash("velocity");
+        
         [SerializeField] private float moveSpeed = 10;
 
         // Per sec
@@ -15,6 +17,7 @@ namespace WellDonegeon
         private Rigidbody _myRigidbody;
         private Animator _myAnimator;
         private Vector2 _moveAmount;
+
 
         private void Awake()
         {
@@ -44,7 +47,7 @@ namespace WellDonegeon
                 );
             }
             
-            _myAnimator.SetFloat("velocity", _myRigidbody.velocity.magnitude);
+            _myAnimator.SetFloat(Velocity, _myRigidbody.velocity.magnitude);
         }
     }
 }
