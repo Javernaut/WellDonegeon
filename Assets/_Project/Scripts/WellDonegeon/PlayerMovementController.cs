@@ -13,16 +13,15 @@ namespace WellDonegeon
 
         // Per sec
         [SerializeField] private float rotateSpeed = 180f;
+        [SerializeField] private Animator animator;
 
         private Rigidbody _myRigidbody;
-        private Animator _myAnimator;
         private Vector2 _moveAmount;
 
 
         private void Awake()
         {
             _myRigidbody = GetComponent<Rigidbody>();
-            _myAnimator = GetComponent<Animator>();
         }
 
         public void OnMove(InputValue inputValue)
@@ -47,7 +46,7 @@ namespace WellDonegeon
                 );
             }
             
-            _myAnimator.SetFloat(Velocity, _myRigidbody.velocity.magnitude);
+            animator.SetFloat(Velocity, _myRigidbody.velocity.magnitude);
         }
     }
 }
