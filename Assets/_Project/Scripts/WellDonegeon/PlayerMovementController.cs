@@ -7,7 +7,7 @@ namespace WellDonegeon
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovementController : MonoBehaviour
     {
-        private static readonly int Velocity = Animator.StringToHash("velocity");
+        private static readonly int Velocity = Animator.StringToHash("Velocity");
         
         [SerializeField] private float moveSpeed = 10;
 
