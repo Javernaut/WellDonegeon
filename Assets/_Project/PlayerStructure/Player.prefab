@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8246950945355013276}
   - component: {fileID: 4870247469687994328}
   - component: {fileID: 1876859941633649597}
-  - component: {fileID: 3413579397264232178}
+  - component: {fileID: 1596675148751254225}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -92,7 +92,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -107,7 +107,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &1876859941633649597
 MonoBehaviour:
@@ -124,8 +124,8 @@ MonoBehaviour:
   moveSpeed: 10
   rotateSpeed: 700
   animator: {fileID: 3003963845668935303}
---- !u!136 &3413579397264232178
-CapsuleCollider:
+--- !u!65 &1596675148751254225
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -142,11 +142,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.2140454, z: 0}
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 2, z: 0.8}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &5415943952906988004
 GameObject:
   m_ObjectHideFlags: 0
