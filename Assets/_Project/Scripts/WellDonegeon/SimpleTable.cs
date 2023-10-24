@@ -1,30 +1,16 @@
-using System;
 using UnityEngine;
 
 namespace WellDonegeon
 {
-    [RequireComponent(typeof(Highlighter))]
-    public class SimpleTable : MonoBehaviour, IInteractable, ITransferParty
+    public class SimpleTable : BaseInteractableThing, ITransferParty
     {
         [SerializeField] private Transform itemSlot;
 
-        private Highlighter _highlighter;
-
         private IHoldable _item;
 
-        private void Awake()
-        {
-            _highlighter = GetComponent<Highlighter>();
-        }
-
-        public ITransferParty GetTransferParty()
+        public override ITransferParty GetTransferParty()
         {
             return this;
-        }
-
-        public void SetSelected(bool selected)
-        {
-            _highlighter.SetHighlighted(selected);
         }
 
         public IHoldable PeekHoldable()

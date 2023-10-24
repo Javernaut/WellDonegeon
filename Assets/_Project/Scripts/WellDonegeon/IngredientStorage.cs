@@ -3,25 +3,13 @@ using UnityEngine;
 namespace WellDonegeon
 {
     [RequireComponent(typeof(Highlighter))]
-    public class IngredientStorage : MonoBehaviour, IInteractable
+    public class IngredientStorage : BaseInteractableThing
     {
         [SerializeField] private Ingredient ingredient;
 
-        private Highlighter _highlighter;
-        
-        private void Awake()
-        {
-            _highlighter = GetComponent<Highlighter>();
-        }
-        
-        public ITransferParty GetTransferParty()
+        public override ITransferParty GetTransferParty()
         {
             return new TransferParty(ingredient);
-        }
-
-        public void SetSelected(bool selected)
-        {
-            _highlighter.SetHighlighted(selected);
         }
 
         private class TransferParty : ITransferParty
