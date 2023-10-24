@@ -6,9 +6,40 @@ namespace WellDonegeon
     {
         [SerializeField] private Ingredient ingredient;
 
-        public void Transfer(PlayerHandsController playerHandsController)
+        public ITransferParty GetTransferParty()
         {
-            playerHandsController.PickIfNotEmpty(ingredient);
+            return new TransferParty(ingredient);
+        }
+
+        private class TransferParty : ITransferParty
+        {
+            private Ingredient ingredient;
+
+            public TransferParty(Ingredient ingredient)
+            {
+                this.ingredient = ingredient;
+            }
+
+            public void NotifyHoldableChanged()
+            {
+            }
+
+            public IHoldable PeekHoldable()
+            {
+                return ingredient;
+            }
+
+            public IHoldable PopHoldable()
+            {
+                return ingredient;
+            }
+
+            public void PushHoldable(IHoldable holdable)
+            {
+                // Not supported
+            }
+
+            public bool CanAccept(IHoldable holdable) => false;
         }
     }
 }

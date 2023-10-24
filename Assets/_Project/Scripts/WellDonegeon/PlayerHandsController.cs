@@ -4,34 +4,14 @@ using UnityEngine.InputSystem;
 
 namespace WellDonegeon
 {
-    public class PlayerHandsController : MonoBehaviour
+    public class PlayerHandsController : MonoBehaviour, ITransferParty
     {
         [SerializeField] private Transform handsTransform;
-        
-        private Ingredient _ingredient;
 
-        public Ingredient Ingredient => _ingredient;
+        private IHoldable _holdable;
 
         private IInteractable _interactable;
 
-        public void PickIfNotEmpty(Ingredient ingredient)
-        {
-            if (_ingredient == null)
-            {
-                _ingredient = ingredient;
-                Debug.Log("Ingredient picked");
-                ingredient.SpawnAt(handsTransform);
-            }
-        }
-
-        public void IngredientTakenAway()
-        {
-            _ingredient = null;
-            // Assume we have only 1 child
-            Destroy(handsTransform.GetChild(0).gameObject);
-            Debug.Log("Ingredient taken away");
-        }
-        
         private void FixedUpdate()
         {
             IInteractable newInteractable = null;
@@ -54,14 +34,63 @@ namespace WellDonegeon
 
         public void OnTransfer(InputValue value)
         {
-            _interactable?.Transfer(this);
+            if (_interactable != null)
+            {
+                TransferProcessor.Transfer(this, _interactable.GetTransferParty());
+            }
         }
 
         private void SetSelectedInteractable(IInteractable interactable)
         {
-            // _interactable?.SetSelected(false);
-            _interactable = interactable;
-            // _interactable?.SetSelected(true);
+            if (_interactable != interactable)
+            {
+                // _interactable?.SetSelected(me, false);
+                _interactable = interactable;
+                // _interactable?.SetSelected(me, true);    
+            }
+        }
+
+        public IHoldable GetHoldable()
+        {
+            return _holdable;
+        }
+
+        public void SetHoldable(IHoldable holdable)
+        {
+            _holdable = holdable;
+        }
+
+        public void NotifyHoldableChanged()
+        {
+            if (handsTransform.childCount > 0)
+            {
+                Destroy(handsTransform.GetChild(0).gameObject);
+            }
+
+            _holdable?.RenderAt(handsTransform);
+        }
+
+        public IHoldable PeekHoldable()
+        {
+            return _holdable;
+        }
+
+        public IHoldable PopHoldable()
+        {
+            var result = _holdable;
+            _holdable = null;
+            return result;
+        }
+
+        public void PushHoldable(IHoldable holdable)
+        {
+            _holdable = holdable;
+        }
+
+        public bool CanAccept(IHoldable holdable)
+        {
+            // Only if there is no holdable at hands
+            return _holdable == null;
         }
     }
 }
