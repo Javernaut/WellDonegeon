@@ -13,11 +13,11 @@ namespace WellDonegeon
 
         private class TransferParty : ITransferParty
         {
-            private Ingredient ingredient;
+            private readonly Ingredient _ingredient;
 
             public TransferParty(Ingredient ingredient)
             {
-                this.ingredient = ingredient;
+                _ingredient = ingredient;
             }
 
             public void NotifyHoldableChanged()
@@ -26,12 +26,11 @@ namespace WellDonegeon
 
             public IHoldable PeekHoldable()
             {
-                return ingredient;
+                return _ingredient;
             }
 
-            public IHoldable PopHoldable()
+            public void PopHoldable()
             {
-                return ingredient;
             }
 
             public void PushHoldable(IHoldable holdable)

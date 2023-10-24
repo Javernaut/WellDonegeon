@@ -75,11 +75,9 @@ namespace WellDonegeon
             return _holdable;
         }
 
-        public IHoldable PopHoldable()
+        public void PopHoldable()
         {
-            var result = _holdable;
             _holdable = null;
-            return result;
         }
 
         public void PushHoldable(IHoldable holdable)

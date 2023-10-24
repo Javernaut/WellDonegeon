@@ -49,8 +49,8 @@ namespace WellDonegeon
         // Getting the top Holdable without removing it
         IHoldable PeekHoldable();
 
-        // Getting the top holdable and removing it
-        IHoldable PopHoldable();
+        // Dropping the item if possible
+        void PopHoldable();
 
         // Pushing the holdable, assume it will be accepted
         void PushHoldable(IHoldable holdable);
