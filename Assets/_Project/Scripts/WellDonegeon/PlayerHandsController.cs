@@ -21,7 +21,7 @@ namespace WellDonegeon
                     transform.position + Vector3.up,
                     transform.TransformDirection(Vector3.forward),
                     out hit,
-                    3))
+                    1))
             {
                 if (hit.transform.gameObject.TryGetComponent<IInteractable>(out var interactable))
                 {
@@ -44,9 +44,9 @@ namespace WellDonegeon
         {
             if (_interactable != interactable)
             {
-                // _interactable?.SetSelected(me, false);
+                _interactable?.SetSelected(false);
                 _interactable = interactable;
-                // _interactable?.SetSelected(me, true);    
+                _interactable?.SetSelected(true);    
             }
         }
 

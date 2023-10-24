@@ -7,8 +7,9 @@ namespace WellDonegeon
     {
         // Should be non-null
         public ITransferParty GetTransferParty();
-        // TODO
-        // public SetSelected(byWho, isSelected);
+
+        // Assume only 1 player for now
+        public void SetSelected(bool selected);
     }
 
     public class TransferProcessor

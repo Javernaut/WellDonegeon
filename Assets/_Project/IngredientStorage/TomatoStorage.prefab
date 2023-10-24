@@ -63,6 +63,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: TomatoStorage
       objectReference: {fileID: 0}
+    - target: {fileID: 5381207624550945565, guid: 050820fc8557444aa85837bdb52052fc,
+        type: 3}
+      propertyPath: color.a
+      value: 0.31764707
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381207624550945565, guid: 050820fc8557444aa85837bdb52052fc,
+        type: 3}
+      propertyPath: color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381207624550945565, guid: 050820fc8557444aa85837bdb52052fc,
+        type: 3}
+      propertyPath: color.g
+      value: 0.46226418
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381207624550945565, guid: 050820fc8557444aa85837bdb52052fc,
+        type: 3}
+      propertyPath: color.r
+      value: 0.023294266
+      objectReference: {fileID: 0}
+    - target: {fileID: 5381207624550945565, guid: 050820fc8557444aa85837bdb52052fc,
+        type: 3}
+      propertyPath: renderer
+      value: 
+      objectReference: {fileID: 8973027846639507769}
     - target: {fileID: 9055992294027097849, guid: 050820fc8557444aa85837bdb52052fc,
         type: 3}
       propertyPath: ingredient
@@ -155,6 +180,12 @@ PrefabInstance:
 --- !u!4 &7840122180606960214 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 88d4bd973de08441ba307fab6791744f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7730161479667697085}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &8973027846639507769 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 88d4bd973de08441ba307fab6791744f,
     type: 3}
   m_PrefabInstance: {fileID: 7730161479667697085}
   m_PrefabAsset: {fileID: 0}

@@ -5,15 +5,28 @@ using UnityEngine;
 
 namespace WellDonegeon
 {
+    [RequireComponent(typeof(Highlighter))]
     public class ServingArea : MonoBehaviour, IInteractable
     {
         [SerializeField] private TextMeshProUGUI scoreText;
 
+        private Highlighter _highlighter;
+        
         private int _score;
 
+        private void Awake()
+        {
+            _highlighter = GetComponent<Highlighter>();
+        }
+        
         public ITransferParty GetTransferParty()
         {
             return new TransferParty(this);
+        }
+
+        public void SetSelected(bool selected)
+        {
+            _highlighter.SetHighlighted(selected);
         }
 
         // Currently accepting whatever we are given
