@@ -13,6 +13,16 @@ PrefabInstance:
       propertyPath: renderer
       value: 
       objectReference: {fileID: 7274316236381832500}
+    - target: {fileID: 1765822159132379677, guid: 3ef087f754bdd4ed8a67317d4e92afd9,
+        type: 3}
+      propertyPath: renderers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765822159132379677, guid: 3ef087f754bdd4ed8a67317d4e92afd9,
+        type: 3}
+      propertyPath: renderers.Array.data[0]
+      value: 
+      objectReference: {fileID: 7274316236381832500}
     - target: {fileID: 3461494529355029967, guid: 3ef087f754bdd4ed8a67317d4e92afd9,
         type: 3}
       propertyPath: m_Name
