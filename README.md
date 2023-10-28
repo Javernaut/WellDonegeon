@@ -5,7 +5,7 @@
 
 ## Summary
 
-Cooking game inspired by Overcooked. The game is under development, so literally everything is a subject to change.
+Cooking game inspired by Overcooked. The game is under development, so literally everything is a subject to change. Current progress can be seen at the [WebGL build](https://javernaut.github.io/WellDonegeon/). WASD/Arrows + Space are the controls. 
 
 ## Acknowledgments
 This project uses graphical assets made by [Kay Lousberg](https://www.kaylousberg.com/) in order to make a coherent gameplay.
