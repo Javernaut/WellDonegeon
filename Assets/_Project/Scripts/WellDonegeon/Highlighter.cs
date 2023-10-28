@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace WellDonegeon
@@ -16,13 +15,12 @@ namespace WellDonegeon
                 if (selected)
                 {
                     material.EnableKeyword("_EMISSION");
-                    //before we can set the color
                     material.SetColor("_EmissionColor", color);
                 }
                 else
                 {
                     material.DisableKeyword("_EMISSION");
-                }   
+                }
             }
         }
     }
