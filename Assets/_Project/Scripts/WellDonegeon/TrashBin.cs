@@ -19,6 +19,11 @@ namespace WellDonegeon
         {
             _highlighter.SetHighlighted(selected);
         }
+
+        public void OnTransferDone()
+        {
+            _highlighter.RefreshSelf();
+        }
     }
     
     

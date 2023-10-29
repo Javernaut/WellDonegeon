@@ -10,6 +10,9 @@ namespace WellDonegeon
 
         // Assume only 1 player for now
         public void SetSelected(bool selected);
+
+        // Callback to call after a Transfer operation. Subject to be removed.
+        public void OnTransferDone();
     }
 
     public class TransferProcessor

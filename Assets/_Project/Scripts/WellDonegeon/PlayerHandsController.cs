@@ -36,6 +36,7 @@ namespace WellDonegeon
             if (_interactable != null)
             {
                 TransferProcessor.Transfer(this, _interactable.GetTransferParty());
+                _interactable.OnTransferDone();
             }
         }
 
