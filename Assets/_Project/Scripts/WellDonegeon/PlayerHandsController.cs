@@ -17,7 +17,7 @@ namespace WellDonegeon
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(
-                    transform.position + Vector3.up,
+                    transform.position + Vector3.up * .4f,
                     transform.TransformDirection(Vector3.forward),
                     out hit,
                     1))
